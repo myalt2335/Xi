@@ -1,0 +1,7 @@
+(test
+ (name lexer_test)
+ (libraries xic))
+
+(test
+ (name diagnostic_code_test)
+ (libraries xic))

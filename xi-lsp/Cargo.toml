@@ -1,0 +1,16 @@
+[package]
+name = "xi-lsp"
+version = "0.2.0"
+edition = "2024"
+description = "Language server for the OCaml-based Xi toolchain"
+
+[[bin]]
+name = "xi-lsp"
+path = "src/main.rs"
+
+[dependencies]
+dashmap = "6"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1", features = ["io-std", "macros", "process", "rt-multi-thread"] }
+tower-lsp = "0.20"

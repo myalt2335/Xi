@@ -1,0 +1,11 @@
+(library
+ (name xic)
+ (libraries unix)
+ (foreign_stubs
+  (language c)
+  (names resource_usage_stubs))
+ ; The AST is a large set of mutually-recursive records that intentionally
+ ; share label names (span, name, ty, value, body, ...). Warning 30
+ ; (duplicate-definitions) flags that by design, so disable it here.
+ (flags
+  (:standard -w -30)))

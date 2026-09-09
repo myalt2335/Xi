@@ -1,0 +1,12 @@
+(executable
+ (name main)
+ (modes byte exe)
+ (libraries xic))
+
+; Linux release artifacts are linked without a dynamic glibc dependency. The
+; profile is selected only by scripts/build_linux.sh; Windows builds retain
+; their normal MinGW link behavior.
+(env
+ (linux-static
+  (ocamlopt_flags
+   (:standard -ccopt -static))))
